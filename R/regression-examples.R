@@ -145,7 +145,7 @@ tbl_uvregression(
 
 	#poisson model
 poisson_model<- glm(nsibs~eyesight_cat + sex_cat + sleep_wkdy)
-method.args = list(family = poisson()),
+method.args = list(family = poisson())
 exponentiate = TRUE
 
 logbinomial<-tbl_uvregression(
@@ -158,3 +158,20 @@ logbinomial<-tbl_uvregression(
 
 tbl_merge(list(tbl_no_int, tbl_int),
 					tab_spanner = c("**Model 1**", "**Model 2**"))
+
+#exploration
+library(flextable)
+
+myft<- flextable(head(nlsy),
+col_keys=c("sex_cat", "glasses", "eyesight_cat", "income"))
+myft
+
+myft <- italic(myft, j=2)
+myft <- color(myft, ~income > 22,000, ~ income, color = "red")
+myft
+
+
+
+
+
+
