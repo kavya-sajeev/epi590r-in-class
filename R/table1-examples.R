@@ -1,3 +1,4 @@
+install.packages("gtsummary", dependencies = TRUE)
 library(tidyverse)
 library(gtsummary)
 
