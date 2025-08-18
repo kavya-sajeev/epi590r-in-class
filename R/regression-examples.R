@@ -131,4 +131,30 @@ tbl_merge(list(tbl_no_int, tbl_int),
   tab_spanner = c("**Model 1**", "**Model 2**")
 )
 
+#Exercise 1.7
 
+	#univariate regression
+tbl_uvregression(
+	nlsy,
+	x = sex_cat,
+	include = c(nsibs,sleep_wkdy,sleep_wknd,income),
+	method = glm,
+	method.args = list(family = poisson()),
+	exponentiate = TRUE
+)
+
+	#poisson model
+poisson_model<- glm(nsibs~eyesight_cat + sex_cat + sleep_wkdy)
+method.args = list(family = poisson()),
+exponentiate = TRUE
+
+logbinomial<-tbl_uvregression(
+	nlsy,
+	y = glasses,
+	include = c(eyesight_cat, sex_cat),
+	method = glm,
+	method.args = list(family = binomial(link="log")),
+)
+
+tbl_merge(list(tbl_no_int, tbl_int),
+					tab_spanner = c("**Model 1**", "**Model 2**"))
