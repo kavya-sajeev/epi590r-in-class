@@ -1,8 +1,6 @@
 ---
 title: "gtsummary in quarto"
 format: html
-execute:
-  echo: false
 ---
 
 ```{r}
