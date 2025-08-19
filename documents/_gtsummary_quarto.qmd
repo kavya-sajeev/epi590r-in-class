@@ -1,6 +1,8 @@
 ---
 title: "gtsummary in quarto"
-format: html
+format:
+  html:
+    theme: sketchy
 execute:
   echo: false
 ---
@@ -47,8 +49,11 @@ tbl_summary(
   ),
   missing_text = "Missing")
 ```
+
 # About NLSY
-The NLS, sponsored by the U.S. Bureau of Labor Statistics, are nationally representative surveys that follow the same sample of individuals from specific birth cohorts over time.
+
+The NLS, sponsored by the U.S. Bureau of Labor Statistics, are nationally representative surveys that follow the same sample of individuals from specific birth cohorts over time.$x=4$
+
 ```{r}
 #| error: true
 tbl_summary(
@@ -57,4 +62,3 @@ tbl_summary(
   include = c(sex_cat, race_eth_cat, region_cat,
               eyesight_cat, glasses, age_bir))
 ```
-
