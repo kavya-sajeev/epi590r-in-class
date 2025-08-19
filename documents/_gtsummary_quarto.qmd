@@ -52,13 +52,28 @@ tbl_summary(
 
 # About NLSY
 
-The NLS, sponsored by the U.S. Bureau of Labor Statistics, are nationally representative surveys that follow the same sample of individuals from specific birth cohorts over time.$x=4$
+The NLS, sponsored by the U.S. Bureau of Labor Statistics, are nationally representative surveys that follow the same sample of individuals from specific birth cohorts over time. This study included `r nrow(nlsy)` participants. @tbl-one displays demographics of the study cohort.
+
 
 ```{r}
-#| error: true
+#| label: tbl-one
+#| tbl-cap: "NLSY demographics table stratified by sex"
+
 tbl_summary(
   nlsy,
   by = sex_cat,
   include = c(sex_cat, race_eth_cat, region_cat,
               eyesight_cat, glasses, age_bir))
+
 ```
+
+```{r}
+mean_sleep_wknd<- mean(nlsy$sleep_wknd, na.rm = TRUE)
+
+```
+The average amount of sleep participants received on weekends was `r mean_sleep_wknd`.`r median(nlsy$sleep_wknd, na.rm = TRUE)` is the median hours of weekend sleep for participants.
+
+```{r}
+
+```
+
