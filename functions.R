@@ -76,7 +76,7 @@ standard_dev<- function(x, na.rm=TRUE) {
 standard_dev(f,na.rm=FALSE)
 standard_dev(nlsy$income, na.rm=FALSE)
 
-
+o<-c(2,NA,NA,NA)
 
 
 
